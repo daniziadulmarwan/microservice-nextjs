@@ -12,7 +12,7 @@ export default function Home() {
       <main>
         <h3>Homepage</h3>
         <Link href="/about">
-          <a className="bg-teal-600 text-white"> Go to about page</a>
+          <a className=""> Go to about page</a>
         </Link>
       </main>
     </div>
