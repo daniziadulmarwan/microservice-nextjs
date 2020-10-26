@@ -17,7 +17,7 @@ function About({ data }) {
               <li key={todo.id} className="border border-indigo-700 p-4">
                 {todo?.title ?? "-"}{" "}
                 <Link href="/about/[id]" as={`/about/${todo.id}`}>
-                  <a>Launch</a>
+                  <a className="bg-indigo-900 p-1 text-white rounded">Launch</a>
                 </Link>
               </li>
             );
