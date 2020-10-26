@@ -1,6 +1,6 @@
 const withPlugins = require("next-compose-plugins");
 const withCss = require("@zeit/next-css");
-// const withReactSvg = require("next-react-svg");
+const withReactSvg = require("next-react-svg");
 // var withImages = require("next-images");
 
 const path = require("path");
