@@ -11,8 +11,8 @@ export default function Home() {
 
       <main>
         <h3>Homepage</h3>
-        <Link href="/about">
-          <a className=""> Go to about page</a>
+        <Link href="/contact">
+          <a className=""> Go to contact page</a>
         </Link>
       </main>
     </div>
