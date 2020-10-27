@@ -10,10 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="stylesheet"
-            href={`${process.env.NEXT_PUBLIC_BASE_URL}/images/logo.png`}
-          />
+          <link rel="shortcut icon" href="/images/logo.png" />
         </Head>
         <body>
           <Main />

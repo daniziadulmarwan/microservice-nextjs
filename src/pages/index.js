@@ -2,21 +2,33 @@ import Head from "next/head";
 import Link from "next/link";
 
 import axios from "configs/axios";
+import Header from "../parts/Header";
+import Hero from "../parts/Hero";
+import Clients from "../parts/Clients";
 
 function Home(props) {
   console.log(props);
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>BWAMicro</title>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <main>
-        <h3>Homepage</h3>
-        <Link href="/about">
-          <a className=""> Go to contact page</a>
-        </Link>
+        <section className="header-clipping pt-10">
+          <div className="absolute left-0 bottom-0">
+            <img src="/images/circle-accent-1.svg" alt="circle" />
+          </div>
+          <div className="sunshine"></div>
+          <div className="container mx-auto">
+            <Header></Header>
+            <Hero></Hero>
+          </div>
+        </section>
+        <section className="container mx-auto pt-24">
+          <Clients></Clients>
+        </section>
       </main>
     </div>
   );
