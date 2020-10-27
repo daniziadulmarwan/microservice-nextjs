@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 
-function Home() {
+import axios from "configs/axios";
+
+function Home(props) {
+  console.log(props);
   return (
     <div>
       <Head>
@@ -11,18 +14,21 @@ function Home() {
 
       <main>
         <h3>Homepage</h3>
-        <Link href="/contact">
+        <Link href="/about">
           <a className=""> Go to contact page</a>
         </Link>
-        <img
-          className="bg-gray-400 p-1 rounded-full"
-          src="/images/logo.png"
-          alt="logo"
-        />
-        <div></div>
       </main>
     </div>
   );
 }
+
+Home.getInitialProps = async () => {
+  try {
+    const data = axios.get(`/courses`);
+    return { data: data.data };
+  } catch (error) {
+    return error;
+  }
+};
 
 export default Home;
