@@ -14,7 +14,11 @@ export default function Contact() {
           <div className="flex justify-between items-center">
             <Link href="/">
               <a>
-                <h3 className="text-xl">Marwan.</h3>
+                <img
+                  className="bg-gray-400 p-1 rounded-full"
+                  src="/images/logo.png"
+                  alt="logo"
+                />
               </a>
             </Link>
             <ul className="flex">
