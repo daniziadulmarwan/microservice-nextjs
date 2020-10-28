@@ -8,6 +8,7 @@ import Clients from "../parts/Clients";
 import ListCourses from "../parts/ListCourses/index";
 
 function Home({ data }) {
+  console.log(data);
   return (
     <div>
       <Head>
@@ -39,8 +40,8 @@ function Home({ data }) {
 
 Home.getInitialProps = async () => {
   try {
-    const data = axios.get(`/courses`);
-    return { data: data.data };
+    const res = await axios.get(`/courses`);
+    return { data: res.data.data };
   } catch (error) {
     return error;
   }
