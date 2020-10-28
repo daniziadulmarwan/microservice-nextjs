@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import axios from "configs/axios";
+import axios from "../configs/axios/index";
 import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
+import ListCourses from "../parts/ListCourses/index";
 
-function Home(props) {
-  console.log(props);
+function Home({ data }) {
   return (
     <div>
       <Head>
@@ -28,6 +28,9 @@ function Home(props) {
         </section>
         <section className="container mx-auto pt-24">
           <Clients></Clients>
+        </section>
+        <section className="container mx-auto pt-24">
+          <ListCourses data={data}></ListCourses>
         </section>
       </main>
     </div>
