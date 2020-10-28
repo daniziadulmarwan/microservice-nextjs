@@ -6,6 +6,8 @@ import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
 import ListCourses from "../parts/ListCourses/index";
+import ListCategories from "../parts/ListCategories/index";
+import Footer from "../parts/Footer";
 
 function Home({ data }) {
   console.log(data);
@@ -32,6 +34,12 @@ function Home({ data }) {
         </section>
         <section className="container mx-auto pt-24">
           <ListCourses data={data}></ListCourses>
+        </section>
+        <section className="container mx-auto pt-24">
+          <ListCategories></ListCategories>
+        </section>
+        <section className="mt-24 bg-indigo-1000 py-12">
+          <Footer></Footer>
         </section>
       </main>
     </div>
