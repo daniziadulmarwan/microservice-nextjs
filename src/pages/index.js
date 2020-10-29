@@ -1,13 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-
-import axios from "../configs/axios/index";
 import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
 import ListCourses from "../parts/ListCourses/index";
 import ListCategories from "../parts/ListCategories/index";
 import Footer from "../parts/Footer";
+import courses from "src/constants/api/courses";
 
 function Home({ data }) {
   console.log(data);
@@ -48,7 +47,7 @@ function Home({ data }) {
 
 Home.getInitialProps = async () => {
   try {
-    const res = await axios.get(`/courses`);
+    const res = await courses.all();
     return { data: res.data.data };
   } catch (error) {
     return error;
