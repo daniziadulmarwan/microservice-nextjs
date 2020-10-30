@@ -7,6 +7,7 @@ import ListCourses from "../parts/ListCourses/index";
 import ListCategories from "src/parts/ListCategories";
 import Footer from "src/parts/Footer";
 import courses from "src/constants/api/courses";
+import axios from "src/configs/axios";
 
 function Home({ data }) {
   console.log(data);
@@ -47,7 +48,7 @@ function Home({ data }) {
 
 Home.getInitialProps = async () => {
   try {
-    const res = await courses.all();
+    const res = await axios.get(`/courses`);
     return { data: res.data.data };
   } catch (error) {
     return error;

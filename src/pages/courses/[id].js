@@ -1,40 +1,54 @@
 import Head from "next/head";
 import Link from "next/link";
+import courses from "src/constants/api/courses";
+import YouTube from "react-youtube";
+import axios from "src/configs/axios";
 
-function Todo({ data }) {
+function DetailCourse({ data }) {
+  console.log(data);
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Micro</title>
       </Head>
 
-      <main className="container mt-12 mx-auto">
-        <h1 className="text-6xl">Detail Data</h1>
-        <div className="bg-indigo-300 ext-white p-3">
-          <ul>
-            <li>User Id: {data.userId}</li>
-            <li>User Name: {data.title}</li>
-          </ul>
-        </div>
-        <Link href="/about">
-          <a>Back to About Page</a>
-        </Link>
-      </main>
+      <section
+        className="pt-10 relative overflow-hidden"
+        style={{ height: 660 }}
+      >
+        {data?.chapters?.[0]?.lessons?.[0]?.video && (
+          <div className="video-wrapper">
+            <YouTube
+              videoId={data?.chapters?.[0]?.lessons?.[0]?.video}
+              id={data?.chapters?.[0]?.lessons?.[0]?.video}
+              opts={{
+                playerVars: {
+                  loop: 1,
+                  mute: 1,
+                  autoplay: 1,
+                  controls: 0,
+                  showinfo: 0,
+                },
+              }}
+              onEnd={(event) => {
+                event.target.playVideo();
+              }}
+            ></YouTube>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
 
-Todo.getInitialProps = async (props) => {
+DetailCourse.getInitialProps = async (props) => {
   const { id } = props.query;
   try {
-    const data = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      .then((response) => response.json())
-      .then((json) => json);
+    const data = await courses.details(id);
     return { data };
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export default Todo;
+export default DetailCourse;

@@ -1,11 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.video-wrapper {
+  @apply .absolute .inset-0 .z-0;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  @apply .absolute .top-0 .left-0 .w-full .h-full;
+}
 
 .link-wrapped:before {
   @apply .cursor-pointer .z-10 .inset-0 .absolute;
   content: "";
 }
+
 .header-clipping {
   @apply .relative;
 }
