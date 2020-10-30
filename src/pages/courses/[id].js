@@ -2,9 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import courses from "src/constants/api/courses";
 import YouTube from "react-youtube";
-import axios from "src/configs/axios";
 import Header from "src/parts/Header";
 import Feature from "src/parts/Details/Feature";
+
+// icons
+import Nametag from "src/icons/Nametag";
+import PlayBack from "src/icons/PlayBack";
+import Certificate from "src/icons/Certificate";
 
 function DetailCourse({ data }) {
   return (
@@ -57,21 +61,21 @@ function DetailCourse({ data }) {
             <div className="flex justify-between">
               <Feature
                 data={{
-                  icon: "/images/icon-nametag.svg",
+                  icon: <Nametag />,
                   meta: "Student",
                   value: data?.total_student ?? "",
                 }}
               />
               <Feature
                 data={{
-                  icon: "/images/icon-playback.svg",
+                  icon: <PlayBack />,
                   meta: "Video",
                   value: data?.total_videos ?? "",
                 }}
               />
               <Feature
                 data={{
-                  icon: "/images/icon-certificate.svg",
+                  icon: <Certificate />,
                   meta: "Certificate",
                   value: data?.certificate === 1 ? "Tersedia" : "-",
                 }}
