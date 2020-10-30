@@ -10,7 +10,6 @@ import courses from "src/constants/api/courses";
 import axios from "src/configs/axios";
 
 function Home({ data }) {
-  console.log(data);
   return (
     <div>
       <Head>
