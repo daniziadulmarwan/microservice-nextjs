@@ -4,8 +4,8 @@ import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
 import ListCourses from "../parts/ListCourses/index";
-import ListCategories from "../parts/ListCategories/index";
-import Footer from "../parts/Footer";
+import ListCategories from "src/parts/ListCategories";
+import Footer from "src/parts/Footer";
 import courses from "src/constants/api/courses";
 
 function Home({ data }) {
