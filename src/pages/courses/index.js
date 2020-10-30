@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import courses from "src/constants/api/courses";
+import Header from "src/parts/Header";
 
 function About({ data }) {
   return (
@@ -8,6 +9,9 @@ function About({ data }) {
       <Head>
         <title>Micro</title>
       </Head>
+      <div className="w-full mx-auto bg-indigo-600 px-4 py-4">
+        <Header></Header>
+      </div>
       <section
         className="pt-10 relative overflow-hidden container text-center"
         style={{ height: 660 }}

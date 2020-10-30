@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import Play from "src/icons/Play";
 
 export default function RenderItem({ item }) {
   return (
     <div className="w-1/6 px-4">
       <div className="item relative">
         <figure className="item-image">
-          <img src="/images/icon-play.svg" alt="icon-play" />
+          <Play />
           <img
             src={item?.thumbnail ?? ""}
             alt={item?.name ?? "some information"}

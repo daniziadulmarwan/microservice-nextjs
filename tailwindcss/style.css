@@ -81,7 +81,7 @@
 }
 
 .card {
-  @apply border-gray-200 .h-full p-6 .border .relative;
+  @apply border-gray-200 .h-full .p-6 .border .relative;
 }
 
 .card svg {

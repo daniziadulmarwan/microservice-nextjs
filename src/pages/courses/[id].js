@@ -7,7 +7,6 @@ import Header from "src/parts/Header";
 import Feature from "src/parts/Details/Feature";
 
 function DetailCourse({ data }) {
-  console.log(data);
   return (
     <>
       <Head>

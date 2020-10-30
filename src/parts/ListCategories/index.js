@@ -1,42 +1,42 @@
 import React from "react";
 import RenderItem from "./RenderItem";
 
-// import BusinessDevelopment from "public/images/icon-business-development.svg";
-// import ContentWriter from "public/images/icon-content-writer.svg";
-// import ProductAdvertisement from "public/images/icon-product-advertisement.svg";
-// import CustomerRelationship from "public/images/icon-customer-relationship.svg";
-// import GameDevelopment from "public/images/icon-game-development.svg";
-// import TravelGuidance from "public/images/icon-travel-guidance.svg";
+import BusinessDevelopment from "src/icons/BusinessDevelopment";
+import ContentWriter from "src/icons/ContentWriter";
+import ProductAdvertisement from "src/icons/ProductAdvertisement";
+import CustomerRelationship from "src/icons/CustomerRelationship";
+import GameDevelopment from "src/icons/GameDevelopment";
+import TravelGuidance from "src/icons/TravelGuidance";
 
 export default function ListCategories() {
   const data = [
     {
-      imageName: "/images/icon-business-development.svg",
+      imageName: <BusinessDevelopment />,
       name: "Business Development",
       total: 12493,
     },
     {
-      imageName: "/images/icon-content-writer.svg",
+      imageName: <ContentWriter />,
       name: "Content Writer",
       total: 839,
     },
     {
-      imageName: "/images/icon-product-advertisement.svg",
+      imageName: <ProductAdvertisement />,
       name: "Product Advertisement",
       total: 478,
     },
     {
-      imageName: "/images/icon-customer-relationship.svg",
+      imageName: <CustomerRelationship />,
       name: "Customer Relationship",
       total: 553,
     },
     {
-      imageName: "/images/icon-game-development.svg",
+      imageName: <GameDevelopment />,
       name: "Game Development",
       total: 7309,
     },
     {
-      imageName: "/images/icon-travel-guidance.svg",
+      imageName: <TravelGuidance />,
       name: "Travel Guidance",
       total: 73,
     },

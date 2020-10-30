@@ -22,13 +22,14 @@ export default function ListCourses({ data }) {
           </Link>
         </div>
       </div>
-      <div className="flex justify-start items-center -mx-4 mt-6">
+      <div className="flex justify-start items-center -mx-4 mt-4">
+        {/*mt-6*/}
         {data?.length > 0 ? (
           data.map((item, index) => {
             return <RenderItem item={item} key={index}></RenderItem>;
           })
         ) : (
-          <div className="w-full text-center-py-12">No item found</div>
+          <div className="w-full text-center py-12">No item found</div>
         )}
       </div>
     </React.Fragment>
