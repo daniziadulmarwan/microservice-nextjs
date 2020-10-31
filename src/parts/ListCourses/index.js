@@ -5,7 +5,7 @@ import RenderItem from "./RenderItem";
 
 export default function ListCourses({ data }) {
   return (
-    <React.Fragment>
+    <>
       <div className="flex justify-between items-center">
         <div className="w-auto">
           <h2 className="text-lg text-gray-600">New Clasess</h2>
@@ -22,8 +22,7 @@ export default function ListCourses({ data }) {
           </Link>
         </div>
       </div>
-      <div className="flex justify-start items-center -mx-4 mt-4">
-        {/*mt-6*/}
+      <div className="flex justify-start items-center -mx-4 mt-6">
         {data?.length > 0 ? (
           data.map((item, index) => {
             return <RenderItem item={item} key={index}></RenderItem>;
@@ -32,6 +31,6 @@ export default function ListCourses({ data }) {
           <div className="w-full text-center py-12">No item found</div>
         )}
       </div>
-    </React.Fragment>
+    </>
   );
 }

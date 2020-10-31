@@ -3,7 +3,7 @@ import React from "react";
 const Play = () => {
   return (
     <svg
-      className="icon-play"
+      className="icon"
       width="46"
       height="46"
       viewBox="0 0 46 46"
