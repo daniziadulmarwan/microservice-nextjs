@@ -62,7 +62,7 @@ export default function Modal(props) {
         <div>
           {createPortal(
             <CSSTransition
-              in={props.in && Display}
+              in={props.in ?? Display}
               timeout={500}
               onExit={toggleAllow}
               onExited={toggleAllow}

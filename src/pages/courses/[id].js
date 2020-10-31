@@ -181,7 +181,6 @@ function DetailCourse({ data }) {
         </div>
       </section>
 
-      <div style={{ height: 1000 }}></div>
       <section className="mt-24 bg-indigo-1000 py-12" ref={footer}>
         <Footer></Footer>
       </section>
