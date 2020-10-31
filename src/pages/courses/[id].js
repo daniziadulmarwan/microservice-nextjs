@@ -9,6 +9,7 @@ import { CSSTransition } from "react-transition-group";
 import formatThousand from "src/helpers/FormatThousand";
 import Footer from "src/parts/Footer";
 import CoursePhoto from "src/parts/Details/CoursePhoto";
+import RenderPreview from "src/parts/Details/RenderPreview";
 // icons
 import Nametag from "src/icons/Nametag";
 import PlayBack from "src/icons/PlayBack";
@@ -163,6 +164,18 @@ function DetailCourse({ data }) {
                   <div className="w-full text-center py-12">No Item Found</div>
                 )}
               </div>
+            </section>
+
+            {/* Rendering Previews */}
+            <section className="mt-10">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                You Will <span className="text-teal-500">Learn</span>
+              </h6>
+              {data?.chapters?.length > 0 ? (
+                <RenderPreview previews={data.chapters}></RenderPreview>
+              ) : (
+                <div className="w-full text-center py-12">No Chapter Found</div>
+              )}
             </section>
           </div>
         </div>
