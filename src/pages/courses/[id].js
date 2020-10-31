@@ -8,6 +8,7 @@ import Feature from "src/parts/Details/Feature";
 import { CSSTransition } from "react-transition-group";
 import formatThousand from "src/helpers/FormatThousand";
 import Footer from "src/parts/Footer";
+import CoursePhoto from "src/parts/Details/CoursePhoto";
 // icons
 import Nametag from "src/icons/Nametag";
 import PlayBack from "src/icons/PlayBack";
@@ -21,7 +22,7 @@ function DetailCourse({ data }) {
   useEffect(() => {
     const stickyOffsetTop = footer.current.getBoundingClientRect().top;
     const stickyMetaToggler = () => {
-      setisSticky(stickyMetaToggler >= window.pageYOffset + window.innerHeight);
+      setisSticky(stickyOffsetTop >= window.pageYOffset + window.innerHeight);
     };
     window.addEventListener("scroll", stickyMetaToggler);
     return () => {
@@ -104,7 +105,7 @@ function DetailCourse({ data }) {
         <div>
           <CSSTransition
             in={isSticky}
-            timeout={3000}
+            timeout={300}
             classNames="meta-price"
             unmountOnExit
           >
@@ -112,7 +113,7 @@ function DetailCourse({ data }) {
               <div className="w-3/4 mx-auto">
                 <div className="flex items-center">
                   <div className="w-full">
-                    <h2 className="text-gray-600">Nama Kelas</h2>
+                    <h2 className="text-gray-600">Nama Kelas:</h2>
                     <h3 className="text-2xl text-gray-900">
                       {data?.name ?? "Nama Kelas"}
                     </h3>
@@ -148,11 +149,26 @@ function DetailCourse({ data }) {
                 {data?.description ?? "No Description Found"}
               </p>
             </section>
+
+            <section className="mt-10">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                Course <span className="text-teal-500">Photos</span>
+              </h6>
+              <div className="flex justify-start items-center -mx-4 mt-6">
+                {data?.images?.length > 0 ? (
+                  data?.images?.map((photo, index) => (
+                    <CoursePhoto data={photo.image} key={index}></CoursePhoto>
+                  ))
+                ) : (
+                  <div className="w-full text-center py-12">No Item Found</div>
+                )}
+              </div>
+            </section>
           </div>
         </div>
       </section>
 
-      <div style={{ height: 2000 }}></div>
+      <div style={{ height: 1000 }}></div>
       <section className="mt-24 bg-indigo-1000 py-12" ref={footer}>
         <Footer></Footer>
       </section>
