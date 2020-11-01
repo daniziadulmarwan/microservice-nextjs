@@ -10,14 +10,15 @@ export default function RenderPreview({ previews }) {
       <Accordion>
         {(Active, toggle) => {
           return previews?.map((item, index) => {
+            console.log(item);
             return (
               <Item
                 id={item.id}
-                key={`${index}-${item.id}`}
                 name={item.name}
                 child={item.lessons}
                 active={Active}
                 toggle={toggle}
+                key={`${index}-${item.id}`}
               >
                 {item?.lessons?.length > 0 &&
                   item.lessons.map((child, index2) => {
