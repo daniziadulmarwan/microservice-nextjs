@@ -4,10 +4,10 @@ const IconPlay = () => {
   return (
     <svg
       class="icon"
-      width="46"
-      height="46"
+      width="20"
+      height="20"
       viewBox="0 0 46 46"
-      fill="none"
+      fill="#38b2ac"
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="23" cy="23" r="23" />

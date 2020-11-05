@@ -1,16 +1,17 @@
 import PageLoader from "next/dist/client/page-loader";
 import React from "react";
 import YouTube from "react-youtube";
-import Accordion, { IconLock, IconPlay, Item } from "src/Components/Accordion";
+import IconPlay from "src/icons/IconPlay";
+import Accordion, { IconLock, Item } from "src/Components/Accordion";
 import Modal from "src/Components/Modal";
 
 export default function RenderPreview({ previews }) {
+  console.log(previews);
   return (
     <div className="accordion">
       <Accordion>
         {(Active, toggle) => {
           return previews?.map((item, index) => {
-            console.log(item);
             return (
               <Item
                 id={item.id}
@@ -21,10 +22,10 @@ export default function RenderPreview({ previews }) {
                 key={`${index}-${item.id}`}
               >
                 {item?.lessons?.length > 0 &&
-                  item.lessons.map((child, index2) => {
+                  item.lessons.map((child, index2) => (
                     <div
                       key={`${index2}-${child.id}`}
-                      className="relative hover:bg-gray-200 flex justify-between items-center pl-8 pr-4 py2"
+                      className="relative flex justify-between items-center pl-8 pr-4 py-2"
                     >
                       <span className="text-gray-600">
                         {child?.name ?? "Course name"}
@@ -34,7 +35,7 @@ export default function RenderPreview({ previews }) {
                           content={(toggleModal) => (
                             <YouTube
                               videoId={child?.video}
-                              id={child.video}
+                              id={child?.video}
                               opts={{
                                 playerVars: {
                                   autoplay: 1,
@@ -54,11 +55,16 @@ export default function RenderPreview({ previews }) {
                         </Modal>
                       )}
                       {index2 === 0 && (
-                        <IconPlay className="fill-teal-500"></IconPlay>
+                        <IconPlay
+                          className="fill-teal-500"
+                          width={20}
+                          height={20}
+                        ></IconPlay>
                       )}
-                      {index2 !== 0 && <IconLock></IconLock>}
-                    </div>;
-                  })}
+
+                      {!child.isPreview && index !== 0 && <IconLock></IconLock>}
+                    </div>
+                  ))}
               </Item>
             );
           });

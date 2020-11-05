@@ -20,7 +20,7 @@ export default function Item({ name, id, child, active, toggle, children }) {
           {child && child.length > 0 && (
             <ArrowDown
               className={[
-                `transition-all duration-300 transform`,
+                "transition-all duration-300 transform",
                 active === id ? "rotate-180" : "rotate-0",
               ].join(" ")}
             ></ArrowDown>
