@@ -25,7 +25,7 @@ export default function RenderPreview({ previews }) {
                   item.lessons.map((child, index2) => (
                     <div
                       key={`${index2}-${child.id}`}
-                      className="relative flex justify-between items-center pl-8 pr-4 py-2"
+                      className="relative hover:bg-gray-200 flex justify-between items-center pl-8 pr-4 py-2"
                     >
                       <span className="text-gray-600">
                         {child?.name ?? "Course name"}
@@ -62,7 +62,7 @@ export default function RenderPreview({ previews }) {
                         ></IconPlay>
                       )}
 
-                      {!child.isPreview && index !== 0 && <IconLock></IconLock>}
+                      {index2 !== 0 && <IconLock></IconLock>}
                     </div>
                   ))}
               </Item>
